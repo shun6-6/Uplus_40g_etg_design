@@ -26,6 +26,8 @@ module uplus_40g_eth_module#(
     parameter       P_MAX_LENGTH = 15'd9600
 )(
     input           i_gt_refclk         ,
+    input           north_refclk        ,
+    input           south_refclk        ,
     input           i_dclk              ,
     input           i_sys_rst           ,
     output          o_tx_clk_out        ,
@@ -79,8 +81,8 @@ l_ethernet_1_common_wrapper#(
 ) i_l_ethernet_1_common_wrapper
 (
     .refclk                 (i_gt_refclk        ),
-    .north_refclk           (i_gt_refclk        ),
-    .south_refclk           (i_gt_refclk        ),
+    .north_refclk           (north_refclk        ),
+    .south_refclk           (south_refclk        ),
     .qpll0reset             (w_qpll0reset       ),
     .qpll0lock              (w_qpll0lock        ),
     .qpll0outclk            (w_qpll0outclk      ),

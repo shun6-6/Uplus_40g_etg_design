@@ -199,6 +199,8 @@ uplus_40g_eth_module#(
     .P_MAX_LENGTH           (P_MAX_LENGTH       )
 )uplus_40g_eth_module_u0(
     .i_gt_refclk            (w_gt0_refclk       ),
+    .north_refclk           (1'b0        ),
+    .south_refclk           (1'b0        ),
     .i_dclk                 (w_dclk             ),
     .i_sys_rst              (w_sys_reset        ),
     .o_tx_clk_out           (w_0_tx_clk_out     ),
@@ -229,7 +231,9 @@ uplus_40g_eth_module#(
     .P_MIN_LENGTH           (P_MIN_LENGTH       ),
     .P_MAX_LENGTH           (P_MAX_LENGTH       )
 )uplus_40g_eth_module_u1(
-    .i_gt_refclk            (w_gt0_refclk       ),
+    .i_gt_refclk            (1'b0       ),
+    .north_refclk           (w_gt0_refclk        ),
+    .south_refclk           (1'b0        ),
     .i_dclk                 (w_dclk             ),
     .i_sys_rst              (w_sys_reset        ),
     .o_tx_clk_out           (w_1_tx_clk_out     ),
